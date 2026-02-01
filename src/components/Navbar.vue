@@ -2,10 +2,11 @@
   <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/70 backdrop-blur-xl">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <router-link to="/" class="flex items-center gap-3 group">
-        <span
-          class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-sm font-bold text-white shadow-md group-hover:shadow-lg transition-all duration-300"
-          >TT</span
-        >
+        <img
+          src="/logoTruong.png"
+          alt="Logo Trường"
+          class="h-10 w-10 rounded-full object-contain"
+        />
         <div class="leading-tight">
           <p class="text-sm font-semibold text-slate-900">Cổng thông tin</p>
           <p class="text-xs text-slate-500">Ôn thi tốt nghiệp</p>

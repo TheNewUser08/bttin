@@ -5,11 +5,11 @@
       <div class="mx-auto max-w-7xl px-6 py-10 lg:py-16">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <!-- Left: Info -->
-          <div class="space-y-6">
+          <div class="space-y-7 mt-2 lg:mt-0 mb-8 lg:mb-0">
             <span
               class="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-100 px-4 py-1.5 text-sm font-medium text-blue-600"
             >
-              <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+              <span class="w-2 h-2 py-2 bg-emerald-500 rounded-full animate-pulse"></span>
               Kỳ thi tốt nghiệp THPT 2026
             </span>
             <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
