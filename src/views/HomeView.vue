@@ -242,10 +242,10 @@
               </button>
             </li>
           </TransitionGroup>
-          <div class="group mt-2 flex justify-center">
+          <div class="mt-2 flex justify-center">
             <button
               type="button"
-              class="h-7 w-7 rounded-full border border-dashed border-slate-300 text-slate-400 hover:border-slate-400 hover:text-slate-600 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              class="h-7 w-7 rounded-full border border-dashed border-slate-300 text-slate-400 hover:border-slate-400 hover:text-slate-600 transition flex items-center justify-center"
               @click="addNewTask"
               aria-label="Thêm việc mới"
             >
@@ -358,6 +358,10 @@ import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
 import { Icon } from '@iconify/vue'
 import { countdownDates } from '@/data/countdownDates'
 
+const generateId = () => {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2)
+}
+
 const checklistStorageKey = 'study-checklist'
 const defaultChecklist = [
   { id: 'weekly-outline', text: 'Hoàn thành đề cương theo tuần', done: true, editing: false },
@@ -397,7 +401,7 @@ onMounted(() => {
         checklist.value = parsed
           .filter((item) => item && typeof item.text === 'string')
           .map((item) => ({
-            id: item.id || crypto.randomUUID(),
+            id: item.id || generateId(),
             text: item.text,
             done: Boolean(item.done),
             editing: false,
@@ -456,7 +460,7 @@ const removeChecklistItem = (id) => {
 
 const addNewTask = () => {
   const newItem = {
-    id: crypto.randomUUID(),
+    id: generateId(),
     text: '',
     done: false,
     editing: true,
