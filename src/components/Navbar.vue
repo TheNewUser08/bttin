@@ -13,7 +13,23 @@
         </div>
       </router-link>
 
-      <nav ref="navRef" class="relative flex items-center gap-1 text-sm font-medium">
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-slate-600 hover:bg-slate-100 transition"
+        @click="mobileMenuOpen = !mobileMenuOpen"
+        aria-label="Toggle menu"
+      >
+        <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav ref="navRef" class="relative hidden md:flex items-center gap-1 text-sm font-medium">
         <Motion
           class="absolute inset-y-1 left-0 rounded-full bg-blue-50"
           :initial="{ opacity: 0, x: 0, width: 0 }"
@@ -39,6 +55,31 @@
         </div>
       </nav>
     </div>
+
+    <!-- Mobile nav menu -->
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <nav v-if="mobileMenuOpen" class="md:hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-xl">
+        <div class="px-4 py-3 space-y-1">
+          <router-link
+            v-for="link in navLinks"
+            :key="link.to"
+            :to="link.to"
+            class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+            :class="route.path === link.to ? 'bg-blue-50 !text-blue-600' : ''"
+            @click="mobileMenuOpen = false"
+          >
+            {{ link.label }}
+          </router-link>
+        </div>
+      </nav>
+    </Transition>
   </header>
 </template>
 
@@ -58,6 +99,7 @@ const route = useRoute()
 const navRef = ref(null)
 const linkRefs = ref([])
 const indicator = ref({ left: 0, width: 0, opacity: 0 })
+const mobileMenuOpen = ref(false)
 
 const setLinkRef = (el, index) => {
   if (el) {
