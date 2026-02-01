@@ -9,9 +9,13 @@
       </div>
 
       <div class="grid gap-6 lg:grid-cols-2">
-        <article class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <article
+          class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+        >
           <h2 class="text-xl font-semibold text-slate-800 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg">📅</span>
+            <span class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg"
+              >📅</span
+            >
             Ngày 11/6
           </h2>
           <ul class="mt-4 space-y-3 text-sm">
@@ -32,9 +36,13 @@
           </ul>
         </article>
 
-        <article class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <article
+          class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+        >
           <h2 class="text-xl font-semibold text-slate-800 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-lg">📅</span>
+            <span class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-lg"
+              >📅</span
+            >
             Ngày 12/6
           </h2>
           <ul class="mt-4 space-y-3 text-sm">
@@ -57,7 +65,8 @@
       </div>
 
       <div class="mt-8 rounded-2xl bg-amber-50 border border-amber-200 p-6 text-sm text-amber-800">
-        <span class="font-semibold">⚠️ Lưu ý:</span> Lịch thi có thể điều chỉnh theo thông báo chính thức của Bộ GD&ĐT. Hãy cập nhật thường xuyên.
+        <span class="font-semibold">⚠️ Lưu ý:</span> Lịch thi có thể điều chỉnh theo thông báo chính
+        thức của Bộ GD&ĐT. Hãy cập nhật thường xuyên.
       </div>
     </section>
   </div>
