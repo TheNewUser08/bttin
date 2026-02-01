@@ -50,19 +50,40 @@
               <span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>
               <div>
                 <p class="font-semibold text-slate-800">Buổi sáng</p>
-                <p class="text-slate-500">KHTN hoặc KHXH (3 môn thành phần)</p>
+                <p class="text-slate-500">Tự chọn 1</p>
               </div>
             </li>
             <li class="flex items-start gap-3 p-3 rounded-xl bg-slate-50">
               <span class="mt-1 h-2 w-2 rounded-full bg-blue-500"></span>
               <div>
                 <p class="font-semibold text-slate-800">Buổi chiều</p>
-                <p class="text-slate-500">Ngoại ngữ (thi trắc nghiệm)</p>
+                <p class="text-slate-500">Tự chọn 2</p>
               </div>
             </li>
           </ul>
         </article>
       </div>
+
+      <article
+        class="mt-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+      >
+        <h2 class="text-xl font-semibold text-slate-800 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-lg"
+            >⏳</span
+          >
+          Các mốc đếm ngược
+        </h2>
+        <div class="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+          <article
+            v-for="item in sortedCountdownDates"
+            :key="item.id"
+            class="rounded-xl bg-slate-50 px-4 py-3 border border-slate-100"
+          >
+            <p class="font-medium text-slate-800">{{ item.label }}</p>
+            <p class="text-slate-500">{{ item.display }}</p>
+          </article>
+        </div>
+      </article>
 
       <div class="mt-8 rounded-2xl bg-amber-50 border border-amber-200 p-6 text-sm text-amber-800">
         <span class="font-semibold">⚠️ Lưu ý:</span> Lịch thi có thể điều chỉnh theo thông báo chính
@@ -72,4 +93,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from 'vue'
+import { countdownDates } from '@/data/countdownDates'
+
+const sortedCountdownDates = computed(() =>
+  [...countdownDates].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()),
+)
+</script>

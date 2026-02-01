@@ -74,7 +74,7 @@
                 class="shrink-0 rounded-lg bg-amber-100 px-2.5 py-1 text-xs font-bold text-amber-700"
                 >06</span
               >
-              <p class="text-slate-600">Dành 5-7 phút cuối để soát lại đáp án.</p>
+              <p class="text-slate-600">Dành 6-7 phút cuối để soát lại đáp án.</p>
             </li>
           </ul>
         </article>
